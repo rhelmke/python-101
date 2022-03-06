@@ -2,3 +2,5 @@
 .idea
 *~
 *__pycache__*
+*_ex_solution.py
+*_live.py
