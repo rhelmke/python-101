@@ -25,3 +25,18 @@ Task 3.2: Setup a Pull Request and assign it to your supervisor (rhelmke)
 def sub(minuend, subtrahend):
     return minuend - subtrahend
 
+
+def add(summands):
+    try:
+        return sum(summands)
+    except TypeError:
+        raise TypeError('Invalid input')
+
+
+def div(divident, divisor):
+    if not (type(divident) is int or float) and (type(divisor) is int or float):
+        raise TypeError('Invalid input')
+    if divisor == 0:
+        raise ZeroDivisionError('Divisor can not be zero')
+    return divident / divisor
+

@@ -1,8 +1,8 @@
 '''
 This is the calculator test file
 '''
-from calculator import sub
-
+from calculator import sub, add, div
+import pytest
 
 # this is an example
 def test_sub():
@@ -10,5 +10,23 @@ def test_sub():
     assert sub(1, 2) == -1, "result not correct"
 
 
+def test_add():
+    assert add([1, 2]) == 3, "result not correct"
+    assert add([1, -2]) == -1, "result not correct"
+    assert add([]) == 0, "result not correct"
+    with pytest.raises(TypeError):
+        add(['test', b'1'])
+
+
+def test_div():
+    assert div(1, 2) == 0.5, "result not correct"
+    assert div(-5, -5) == 1, "result not correct"
+    assert div(5, -5) == -1, "result not correct"
+    assert div(-5, 5) == -1, "result not correct"
+    assert div(0.25, .4) == 0.625, "result not correct"
+    with pytest.raises(ZeroDivisionError):
+        div(1, 0)
+    with pytest.raises(TypeError):
+        div('1', '1')
 # add your code here
 
