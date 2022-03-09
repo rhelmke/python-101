@@ -25,3 +25,13 @@ Task 3.2: Setup a Pull Request and assign it to your supervisor (rhelmke)
 def sub(minuend, subtrahend):
     return minuend - subtrahend
 
+
+def add(summands):
+    return sum(summands)
+
+
+def div(divident, divisor):
+    try:
+        return divident / divisor
+    except ZeroDivisionError:
+        return None
