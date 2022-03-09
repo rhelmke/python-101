@@ -27,11 +27,16 @@ def sub(minuend, subtrahend):
 
 
 def add(summands):
-    return sum(summands)
+    try:
+        return sum(summands)
+    except TypeError:
+        raise TypeError('Invalid input')
 
 
 def div(divident, divisor):
-    try:
-        return divident / divisor
-    except ZeroDivisionError:
-        return None
+    if not (type(divident) is int or float) and (type(divisor) is int or float):
+        raise TypeError('Invalid input')
+    if divisor == 0:
+        raise ZeroDivisionError('Divisor can not be zero')
+    return divident / divisor
+
