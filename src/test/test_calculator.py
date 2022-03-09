@@ -13,6 +13,7 @@ def test_sub():
 def test_add():
     assert add([1, 2]) == 3, "result not correct"
     assert add([1, -2]) == -1, "result not correct"
+    assert add([]) == 0, "result not correct"
 
 
 def test_div():
